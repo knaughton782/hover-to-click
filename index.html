@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Test Yourself - Click for information</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+	<!-- <script type="text/javascript" src="scripts/jquery.1.7.1.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="scripts/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="http://www.queness.com/js/bsa.js"></script>
+	<style type="text/css">
+		body {
+			/* background: #fff; */
+			background: #edf2f7;
+			font-family: 'Lato', sans-serif;
+			margin-top: 15px;
+		}
+
+		#container {
+			margin: 10px auto 0 auto;
+			width: 700px;
+		}
+
+		.thumb {
+			display: block;
+			width: 200px;
+			height: 140px;
+			position: relative;
+			margin-bottom: 20px;
+			margin-right: 20px;
+			float: left;
+		}
+
+		.thumb-wrapper {
+			display: block;
+			width: 100%;
+			height: 100%;
+			/* background:#cccccc; */
+		}
+
+		.thumb img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: block;
+		}
+
+		.thumb .thumb-detail {
+			color: #333;
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: #fff;
+			font-family: 'Lato', sans-serif;
+			font-size: 12px;
+		}
+
+		.thumb .thumb-detail p {
+			display: block;
+			width: 95%;
+			height: 100%;
+			color: #333;
+			margin: 10px;
+		}
+
+		.label {
+			background-color: #c2c2c5;
+			color: #333;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+			height: 24px;
+			width: 200px;
+			position: absolute;
+			bottom: 0;
+		}
+
+		/*
+	* Without CSS3
+	*/
+		.thumb.scroll {
+			overflow: hidden;
+		}
+
+		.thumb.scroll .thumb-detail {
+			bottom: -280px;
+		}
+
+		/*
+	* CSS3 Flip
+	*/
+		.thumb.flip {
+			-webkit-perspective: 800px;
+			-moz-perspective: 800px;
+			-ms-perspective: 800px;
+			-o-perspective: 800px;
+			perspective: 800px;
+		}
+
+		.thumb.flip .thumb-wrapper {
+			-webkit-transition: -webkit-transform 1s;
+			-moz-transition: -moz-transform 1s;
+			-ms-transition: -moz-transform 1s;
+			-o-transition: -moz-transform 1s;
+			transition: -moz-transform 1s;
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+			-o-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+		.thumb.flip .thumb-detail {
+			-webkit-transform: rotateY(-180deg);
+			-moz-transform: rotateY(-180deg);
+			-ms-transform: rotateY(-180deg);
+			-o-transform: rotateY(-180deg);
+			transform: rotateY(-180deg);
+		}
+
+		.thumb.flip img,
+		.thumb.flip .thumb-detail,
+		.label {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			-o-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.thumb.flip .flipIt {
+			-webkit-transform: rotateY(-180deg);
+			-moz-transform: rotateY(-180deg);
+			-ms-transform: rotateY(-180deg);
+			-o-transform: rotateY(-180deg);
+			transform: rotateY(-180deg);
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(function () {
+			if ($('html').hasClass('csstransforms3d')) {
+				$('.thumb').removeClass('scroll').addClass('flip');
+				$('.thumb.flip').hover(
+					function () {
+						$(this).find('.thumb-wrapper').addClass('flipIt');
+					},
+					function () {
+						$(this).find('.thumb-wrapper').removeClass('flipIt');
+					}
+				);
+			} else {
+				$('.thumb').hover(
+					function () {
+						$(this).find('.thumb-detail').stop().animate({ bottom: 0 }, 500, 'easeOutCubic');
+					},
+					function () {
+						$(this).find('.thumb-detail').stop().animate({ bottom: ($(this).height() * -1) }, 500, 'easeOutCubic');
+					}
+				);
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="container">
+		<div class="row">
+			<div class="col-12 col-sm-12">
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/teacher1.jpg" alt="Role of Teacher" />
+						<div class="label">Teacher</div>
+						<div class="thumb-detail">
+							<p>Marvel has not gotten engaged with the activities at school and needs time to understand materials and activities.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/social-worker.jpg" alt="Role of Social Worker" />
+						<div class="label">Social Worker</div>
+						<div class="thumb-detail">
+							<p>Marvel is not ready to leave the home care situation and is upset by being away from familiar settings.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/occupational-therapy.jpg" alt="Role of Occupational Therapist" />
+						<div class="label">Occupational Therapist</div>
+						<div class="thumb-detail">
+							<p>Marvel seems overwhelmed by all of the movement and sensory stimulation in the noisy classroom.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12">
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/therapy.jpeg" alt="Role of Physical Therapist" />
+						<div class="label">Physical Therapist</div>
+						<div class="thumb-detail">
+							<p>Marvel is not as coordinated as the other children and is frustrated at not being able to play on the new playground equipment.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/psychologist.jpg" alt="Role of Psychologist" />
+						<div class="label">Psychologist</div>
+						<div class="thumb-detail">
+							<p>Marvel is concerned about where you, the parent, goes when leaving, leaving Marvel anxious all day.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/speech.jpg" alt="Role of Speech or Language Pathologist" />
+						<div class="label">Speech Pathologist</div>
+						<div class="thumb-detail">
+							<p>Marvel is talking but takes some time to formulate ideas. It seems the child does not understand the language used and has limited expressive language to convey feelings and concerns.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12">
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/couch.jpg" alt="Role of School Administrator" />
+						<div class="label">School Administrator</div>
+						<div class="thumb-detail">
+							<p>Marvel is getting a lot of individual attention with the behavior change. Marvel likes the attention so the behaviors continue.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/talking-to-child.jpg" alt="Role of Behavior Therapist" />
+						<div class="label">Behavioral Therapist</div>
+						<div class="thumb-detail">
+							<p>Marvel is strong willed and has been able to make choices. Now Marvel is asked to comply and is not happy about it.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="thumb scroll">
+					<div class="thumb-wrapper">
+						<img src="images/doctor2.jpg" alt="Role of School Nurse" />
+						<div class="label">School Nurse</div>
+						<div class="thumb-detail">
+							<p>Marvel has not had ears and eyes checked. Maybe Marvel has an ear infection or is having troubles seeing and/or hearing.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
