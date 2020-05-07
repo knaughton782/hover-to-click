@@ -4,13 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Test Yourself - Click for information</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
-	<!-- <script type="text/javascript" src="scripts/jquery.1.7.1.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script> -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 	<script type="text/javascript" src="scripts/modernizr.2.5.3.min.js"></script>
-	<script type="text/javascript" src="http://www.queness.com/js/bsa.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 	<style type="text/css">
 		body {
 			/* background: #fff; */
@@ -19,10 +18,10 @@
 			margin-top: 15px;
 		}
 
-		#container {
+		/* #container {
 			margin: 10px auto 0 auto;
 			width: 700px;
-		}
+		} */
 
 		.thumb {
 			display: block;
@@ -152,6 +151,9 @@
 						$(this).find('.thumb-wrapper').removeClass('flipIt');
 					}
 				);
+				$('.thumb.flip').on('click', function () {
+					$(this).find('.thumb-wrapper').toggleClass('flipIt');
+				});
 			} else {
 				$('.thumb').hover(
 					function () {
@@ -169,108 +171,98 @@
 <body>
 
 	<div id="container">
-		<div class="row">
-			<div class="col-12 col-sm-12">
 
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/teacher1.jpg" alt="Role of Teacher" />
-						<div class="label">Teacher</div>
-						<div class="thumb-detail">
-							<p>Marvel has not gotten engaged with the activities at school and needs time to understand materials and activities.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/social-worker.jpg" alt="Role of Social Worker" />
-						<div class="label">Social Worker</div>
-						<div class="thumb-detail">
-							<p>Marvel is not ready to leave the home care situation and is upset by being away from familiar settings.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/occupational-therapy.jpg" alt="Role of Occupational Therapist" />
-						<div class="label">Occupational Therapist</div>
-						<div class="thumb-detail">
-							<p>Marvel seems overwhelmed by all of the movement and sensory stimulation in the noisy classroom.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12">
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/therapy.jpeg" alt="Role of Physical Therapist" />
-						<div class="label">Physical Therapist</div>
-						<div class="thumb-detail">
-							<p>Marvel is not as coordinated as the other children and is frustrated at not being able to play on the new playground equipment.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/psychologist.jpg" alt="Role of Psychologist" />
-						<div class="label">Psychologist</div>
-						<div class="thumb-detail">
-							<p>Marvel is concerned about where you, the parent, goes when leaving, leaving Marvel anxious all day.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/speech.jpg" alt="Role of Speech or Language Pathologist" />
-						<div class="label">Speech Pathologist</div>
-						<div class="thumb-detail">
-							<p>Marvel is talking but takes some time to formulate ideas. It seems the child does not understand the language used and has limited expressive language to convey feelings and concerns.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12">
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/couch.jpg" alt="Role of School Administrator" />
-						<div class="label">School Administrator</div>
-						<div class="thumb-detail">
-							<p>Marvel is getting a lot of individual attention with the behavior change. Marvel likes the attention so the behaviors continue.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/talking-to-child.jpg" alt="Role of Behavior Therapist" />
-						<div class="label">Behavioral Therapist</div>
-						<div class="thumb-detail">
-							<p>Marvel is strong willed and has been able to make choices. Now Marvel is asked to comply and is not happy about it.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="thumb scroll">
-					<div class="thumb-wrapper">
-						<img src="images/doctor2.jpg" alt="Role of School Nurse" />
-						<div class="label">School Nurse</div>
-						<div class="thumb-detail">
-							<p>Marvel has not had ears and eyes checked. Maybe Marvel has an ear infection or is having troubles seeing and/or hearing.</p>
-						</div>
-					</div>
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/teacher1.jpg" alt="Role of Teacher" />
+				<div class="label">Teacher</div>
+				<div class="thumb-detail">
+					<p>Marvel has not gotten engaged with the activities at school and needs time to understand materials and activities.</p>
 				</div>
 			</div>
 		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/social-worker.jpg" alt="Role of Social Worker" />
+				<div class="label">Social Worker</div>
+				<div class="thumb-detail">
+					<p>Marvel is not ready to leave the home care situation and is upset by being away from familiar settings.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/occupational-therapy.jpg" alt="Role of Occupational Therapist" />
+				<div class="label">Occupational Therapist</div>
+				<div class="thumb-detail">
+					<p>Marvel seems overwhelmed by all of the movement and sensory stimulation in the noisy classroom.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/therapy.jpeg" alt="Role of Physical Therapist" />
+				<div class="label">Physical Therapist</div>
+				<div class="thumb-detail">
+					<p>Marvel is not as coordinated as the other children and is frustrated at not being able to play on the new playground equipment.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/psychologist.jpg" alt="Role of Psychologist" />
+				<div class="label">Psychologist</div>
+				<div class="thumb-detail">
+					<p>Marvel is concerned about where you, the parent, goes when leaving, leaving Marvel anxious all day.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/speech.jpg" alt="Role of Speech or Language Pathologist" />
+				<div class="label">Speech Pathologist</div>
+				<div class="thumb-detail">
+					<p>Marvel is talking but takes some time to formulate ideas. It seems the child does not understand the language used and has limited expressive language to convey feelings and concerns.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/couch.jpg" alt="Role of School Administrator" />
+				<div class="label">School Administrator</div>
+				<div class="thumb-detail">
+					<p>Marvel is getting a lot of individual attention with the behavior change. Marvel likes the attention so the behaviors continue.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/talking-to-child.jpg" alt="Role of Behavior Therapist" />
+				<div class="label">Behavioral Therapist</div>
+				<div class="thumb-detail">
+					<p>Marvel is strong willed and has been able to make choices. Now Marvel is asked to comply and is not happy about it.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="thumb scroll">
+			<div class="thumb-wrapper">
+				<img src="images/doctor2.jpg" alt="Role of School Nurse" />
+				<div class="label">School Nurse</div>
+				<div class="thumb-detail">
+					<p>Marvel has not had ears and eyes checked. Maybe Marvel has an ear infection or is having troubles seeing and/or hearing.</p>
+				</div>
+			</div>
+		</div>
+
 	</div>
-	</div>
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
